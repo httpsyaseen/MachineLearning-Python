@@ -3,7 +3,7 @@ import pandas as p;
 from sklearn.impute import SimpleImputer;
 
 #Importing Data-set File
-dataset=p.read_csv('Data.csv');
+dataset=p.read_csv('./data-sets/Data.csv');
 
 #Readind Data(: means all rows and :-1 means every column except last one)
 X=dataset.iloc[:,:-1].values
@@ -37,8 +37,6 @@ from sklearn.preprocessing import StandardScaler;
 sc=StandardScaler();
 X_train[:,3:]=sc.fit_transform(X_train[:,3:]);
 X_test[:,3:]=sc.fit_transform(X_test[:,3:]);
-
-
 
 print(X_train)
 print(X_test)
