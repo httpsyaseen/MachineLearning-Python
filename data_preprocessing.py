@@ -1,6 +1,7 @@
 import numpy as np;
 import pandas as p;
 from sklearn.impute import SimpleImputer;
+import matplotlib.pyplot as plt
 
 #Importing Data-set File
 dataset=p.read_csv('./data-sets/Data.csv');
@@ -38,8 +39,15 @@ sc=StandardScaler();
 X_train[:,3:]=sc.fit_transform(X_train[:,3:]);
 X_test[:,3:]=sc.fit_transform(X_test[:,3:]);
   
-print(X_train)
-print(X_test)
+
+
+
+
+
+
+
+
+
 
 
 
