@@ -29,6 +29,14 @@ model = LinearRegression();
 model.fit(X_train,Y_train);
 
 
+
+onehot = ct.named_transformers_['encoder']
+print("Categories used for encoding:", onehot.categories_)
+
+# Display model coefficients
+print("Model coefficients:", model.coef_)
+
+
 #Predicted Results
 Y_pred=model.predict(X_test);
 
@@ -37,8 +45,6 @@ np.set_printoptions(precision=2);
 
 #Concatenating the Predicting and Test data for Comparison
 print( np.concatenate( ( Y_pred.reshape(len(Y_pred),1) , Y_test.reshape(len(Y_test),1)),1));
-
-
 
 
 predicted=Y_pred;
@@ -64,7 +70,7 @@ ax.set_xticks(indices)
 ax.legend()
 
 # Add a grid and labels to each bar
-ax.grid(axis='y', linestyle='--', alpha=0.7)
+ax.grid(axis='y', linestyle='--', alpha=0.7) 
 # ax.bar_label(bars1, fmt='%.2f', padding=3)
 # ax.bar_label(bars2, fmt='%.2f', padding=3)
 
